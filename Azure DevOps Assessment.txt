@@ -1,0 +1,221 @@
+O que é DevOps?
+
+DevOps é a união de pessoas, processos e produtos, para que seja possível ter entrega continua de valor para nossos usuários finais.
+
+--------------------
+Valores Fundamentais
+
+Colaboração em um time multidisciplinado
+Eliminar processos
+Ferramentas -> produção
+
+Observar, orientar, decidir, agir
+
+Maximizar velocidade, experimentos
+Falhar mais rapido em coisas erradas
+
+CICLOS DE ENTREGAS RÁPIDAS -> um dos valores fundamentais
+
+--------------------
+CLICO DE VIDA DevOps
+
+Criar, planejar, verificar, empacotar -> DEV
+Liberar, configurar, monitorar, planejar -> OPS
+
+--------------------
+7 PRÁTICAS DE HABITOS de uma cultura DevOps de sucesso
+
+Praticas:
+	-> Gerenciamento de configuração
+	-> Gerenciamento de liberação
+	-> Entrega continua
+	-> Deploy continuo
+	-> Infraestrutura como código
+	-> Monitoramento de perfomance da aplicação
+	-> Testes Automatizados
+	
+Hábitos:
+	-> Autonomia do time e alinhamento em da empresa
+	-> Gereciamento rigoroso de débitos técnicos
+	-> Foco no fluxo do valor do cliente
+	-> Desenvolvimento orientado por hipóteses
+	-> Evidências coletadas em produção
+	-> Culture do site ao vivo
+	-> Gerenciar infraestrutura como um recurso flexivel
+	
+--------------------
+DevOps -> automatização de builds e deploys
+
+Tempo de espera -> é o tempo de ciclo de quando um time inicia escrever códigos para o seu primeiro deploy de suceoss no ambiente de produção.
+
+Infraestrutura como Códigos é o gerenciamento e provisionamento de máquinas atráves do código.
+
+--------------------
+Testes Contínuo
+
+Execução de testes repetidamente
+
+-------------------
+Gerenciamento de Configuração
+
+Gerenciamento de configuração é o gerenciamento de todos os ambiente para uma aplicação.
+É feito em forma de scripts que são versionados.
+É menos comum no DevOps.
+
+Infraestrutura como código: implica em definir ambientes, incluindo redes, servidores e outros recursos.
+Configuração como código: é definido a configuração dos servidores, e outros recursos que são enviados ao "version control".
+
+Beneficios:
+
+-> Mais "manutencível"
+-> Poucos lugares para atualizar
+-> Poucos erros
+-> Mais seguro
+-> Mais confiável
+
+Existem dois tipos de Infraestrutura como Código:
+	-> Declarativo: qual deve ser o estado final.
+	-> Imperativo: o script indica como a máquina deve chegar ao estado final.
+	
+-----------------
+Resource group -> é um container que mantém recursos relacionados para uma aplicação.
+
+Azure Resource Manager -> metodologia de deploy que permite que você defina o que voce quer para infraestrutura.
+					   -> definir o meu deploy em um arquivo.
+					   
+Para implementar Infraestrutura como código podemos usar o Docker, DSC (powershell), Puppet
+Containers nos proporcionam inicio imediato e isolamento de memória para aplicações
+-----------------
+Containers -> são isolados, recursos controlados e ambientes operacionais portáveis.
+		   -> aplicação roda sem "tocar" nos recursos
+		   
+O que é Docker?
+	-> Seguindo a perspectiva de uma máquina virtual, é um servidor completo.
+
+Dockers Images -> são quase hds virtuais
+	-> camadas
+
+-> Densidade
+-> Compartilhamento de imagens
+-> Deploys consistentes
+-----------------
+O primeiro comando de um docker file deve ser o From.
+-----------------
+Testes automatizados
+
+Valores de testes automatizados
+
+-> Feedbacks "cedo" e oportuno
+-> Aumenta a velocidade de entrega de software
+-> Reduz custos
+-> Fundamental para Integração Continua e Entrega Continua
+-> Confiabilidade
+-> Repetibilidade
+-> Arquitetura de teste robusta
+----------------
+Tipos de teste
+
+-> Testes unitários: são automatizados, simples, repetível, e testes mantidos que invocão uma unidade de trabalho no
+sistema e checa uma suposição única sobre o comportamento daquela unidade de trabalho.
+-> Teste de integração: valida duas ou mais dependecia do software como um grupo de multiplos caminhos.
+-> Testes de UI Automatizados: teste feito atráves da interface do usuário para testar cenários dos componentes.
+-> Teste de performance e de carga: testes de perfomances validam a responsivadade da aplicação, taxa de transferência,
+confiabilidade e estabilidade.
+Um teste de carga coloca demandas sobre o sistema para determinar comportamentos sobre leveis variantes de carga, identificar
+gargalos e validar perfomance esperada.
+-> Aceitação manual e testes exploratórios: o teste de aceitação manual valida se um requisito ou especificação foi atendidade.
+Um teste exploratório utiliza a inteligencia do tester e criativade para validar qualidade, usabilidade, performance, experiência
+e outras métricas.
+-----------------
+Real User Monitoring -> captura o uso de dados de usuários reais em produção.
+Synthetic Monitoring -> emulado algumas interações do usuário com a aplicação.
+
+CONTINUOS LEARNING -> Application target considerations
+-----------------
+VSM -> Value stream map -> ajuda a mesurar onde o processo tem valor para o cliente e onde está comendo tempo sem produzir nenhum valor.
+Agile -> É um termo utilizado para descrever abordagens para o desenvolvimento de software, enfatizando entregas incrementais, colaboração
+do time, planejamento continuo e aprendizado continuo.
+	  -> NÃO É UM PROCESSO.
+
+Azure Pipeline -> é um servico em nuvem que pode ser usado para builds automáticos, teste, e deploy do código do projeto.
+
+Integração Continua (CI) -> é o processo de automatizar builds e teste de códigos toda hora que um membro do time realiza um commit.
+Build Agent -> é um "pedaço" de software instalado que roda um build ou deploy por vez.
+			-> é possivel fazer um pool de agent
+
+Azure Pipeline task -> uma tarefa é um pacote de scripts ou procedures que são abstraidas com um set de inputs.
+
+Templates -> trabalha com parametros, e nao variaveis
+		  -> usa ${{ }} no lugar de $()
+		  
+		  
+Category					To perform this task						Use this command
+Repository management		Create a Git repository						git init
+							Download a remote repository				git clone
+Branch						Create a branch								checkout
+Stage and commit changes	See which files have been changed			git status
+							Stage files to commit						git add
+							Commit files to your branch					git commit
+Remote synchronization		Download a branch from a remote repository	git pull
+							Upload a branch to a remote repository		git push
+							
+Testes automatizado -> utiliza do software para executar o codigo e comparar o resultado atual com o resultado esperado.
+-----------------
+--allow-empty -> cria uma entrada adicional no meu histórico de commit.Este comando ajuda o Azure Pipelines pegar proximos commits.
+
+Technical debt -> deliberado ou acidental, referece a escolhas rapidas ou ruins feitas que requerem um  tempo significante para consertar. 
+			   -> Tempo de manutenção.
+
+CWE	(Common Weakness Enumeration) -> lista comum de fraqueza e vulnerabilidades mantida pela comunidade da segurança.
+CVE (Common Vulnerabilities and Exposures) -> lista de vulnerabilidades de ciber segurança que é relaciona ao CWE.
+	-> foca em instancias especificas do software.
+CVSS (Common Vulnerability Scoring System)->  é um sistema de "pontuacao" para vulnerabilidades de segurança.
+
+
+-- TOKEN -> bbdcbfeace190589ca954e6c6e3a93485860f6e9
+95a3bb2aeffcd1848b95bba0415189969e96c63e
+
+--no-incremental -> garante que seu aplicativo seja construído do zero
+
+| -> no arquivo YAML, ao usar essa sintaxe, permite que a string tenha multiplas linhas
+
+-----------------
+Build agent -> é um sistema que executa tarefas de builds.
+
+Standard DS2 v2 -> especifica o tamanho da VM. O tamanho da VM define a velocidade do processador, quantia de memoria, quantia inicial
+de armanezamento e banda larga de rede.
+
+TOKEN -> pdsrxscu5jxwij5k3yijqm5buhfa67zom2bi4v5232h3fdcsojlq
+
+Activity ratio = process time/total lead time
+
+CD-> conjunto de processos, ferramentas e tecnicas que permitem rapida, confiavel e entrega continuda de software.
+
+------------------
+
+Pipeline stage -> é uma parte do pipeline que pode rodar independemente e ser acionado por diferentes mecanismos.
+
+AzureWebApp@1: task responsável por realizer o deploy da webapplication para um app service.
+	Inputs necessários para essa tarefa:
+		-> azureSubscription: conexão do servico. Necessário para autenticar com o ambiente alvo.
+		-> appName: especifíca o nome da instancia do app service.
+		-> package: especifica onde no build agent para entrar o pacote para deploy.
+		
+Jobs: é uma série de passos, ou tarefas, que rodam sequencialmente como uma unidade. Cada estágio da pipeline tem um job por padrão.
+
+Strategies: defino como a aplicação é desenrolada.
+
+Estágios viram JOBS, que viram uma série de STEPS que rodam sequencialmente como uma unidade.
+------------------
+
+Release approval -> é uma maneira de pausar uma pipeline até a aceitação ou rejeição por um aprovador da release.
+------------------
+
+Dados podem ser estruturado, semi-estruturado e não estruturado.
+
+Estruturado -> é relacional.
+Não estruturado -> incluem documentos como arquivos de textos, fotos, videos.
+Semi-estruturado -> é não relacional.
+
+Online Transaction Processing (OLTP) é usado para dado relacional.
+Online Analytical Processing (OLAP) é usado para queries mais complexas
